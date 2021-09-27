@@ -18,7 +18,7 @@ td[colspan="4"],[rowspan="4"]{
 }
 
 /*Pregunta 2*/
-li[id="pregunta1"],[id="pregunta2"],[id="pregunta3"],[id="pregunta4"],[id="pregunta5"],[id="pregunta6"]{
+li[id]{
     color: rgb(158, 4, 158);
     font-family: Verdana
 }
