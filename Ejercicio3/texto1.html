@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Estilos para textos</title>
+	<style type="text/css">
+		/* Añadir los estilos necesarios para que la página web se muestre como en la imagen */
+
+		p:first-of-type{
+			font-weight: bold;
+			font-style: italic;
+			text-indent: 2em;
+		}
+
+		#consejo{
+			background-color: rgb(209, 209, 130);
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.2em;
+			font-weight: bold;
+			color:  rgb(47, 8, 83);
+		}
+
+		#textolinea{
+			text-decoration: underline;
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: rgb(240, 218, 179);
+			font-size: 1.2em;
+			text-transform: capitalize;
+			color:  rgb(47, 8, 83);
+		}
+
+		h3{
+			background-color: rgb(182, 119, 74);
+			color: beige;
+		}
+
+		.clase{
+			font-style: italic;
+			color:  rgb(46, 10, 80);
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		h4[class = "clase"]{
+			font-weight: normal;
+		}
+
+		#idparaestilo{
+			background-color: rgb(152, 144, 196);
+			color: beige;
+		}
+
+		table{
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Estilos: Trabajando con textos.</h2>
+	<p>Párrafo con estilos que se aplican por ser el primer párrafo del documento. Este párrafo esta en negrita y cursiva y también ha sido indentado. Todo esta realizado desde la hoja de estilos en cascada o CSS.</p>
+	<p id="consejo">Se aconseja el uso de estilos para el diseño de la página, aunque el HTML permite añadir atributos y otras posibilidades para el diseño la tendencia es que acabe utilizandose exclusivamente para los contenidos.</p>
+	<p><span id="textolinea">Estilo en linea (las letras mayúsculas se consiguen con CSS)</span></p>
+	<h3>Estilo para las etiquetas &lt;h3&gt; (afecta a todas las etiquetas &lt;h3&gt;). Solo recomendable para estilos muy genéricos</h3>
+	<p class="clase">Estilo para la clase .clase (se aplica a cualquier etiqueta cuya clase sea establecida a este tipo). Siempre empieza por un punto.</p>
+	<h4 class="clase">Esto es un texto en una etiqueta h4 pero le aplicamos la misma clase que al parrafo anterior (.clase)</h4>
+	<p id="idparaestilo">Estilo a un id (se aplica  al elemento que este identificado con ese id). En una página cada id debe ser exclusivo de una sola etiqueta (lo que hemos hecho en esta página con un id repetido sería incorrecto)</p>
+	<table>
+	  <tr>
+		<td><h3>Texto en h3 (se aplica el estilo definido a nivel de etiqueta)</h3></td>
+		<td class="clase">Texto con la clase definida anteriormente denominada .clase</td>
+		<td id="idparaestilo">Misma id que el estilo anterior (funciona pero no es recomendable)</td>
+	  </tr>
+	</table>
+	<p>&nbsp;</p>
+</body>
+</html>
