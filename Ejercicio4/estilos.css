@@ -1,0 +1,47 @@
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th[scope="col"]{
+    background-image: url(imagenes/fondo_gris.gif);
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 4em;
+    text-align: bottom;
+}
+th[class ="euro"]{
+    background-color: azure;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    background-image: url(imagenes/euro.png);
+    background-repeat: no-repeat;
+}
+th[class ="dolar"]{
+    background-color: azure;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    background-image: url(imagenes/dolar.png);
+    background-repeat: no-repeat;
+}
+th[class ="libra"]{
+    background-color: azure;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    background-image: url(imagenes/libra.png);
+    background-repeat: no-repeat;
+}
+th[class ="yen"]{
+    background-color: azure;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    background-image: url(imagenes/yen.png);
+    background-repeat: no-repeat;
+}
