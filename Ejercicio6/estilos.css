@@ -22,7 +22,7 @@ span[id="negrita"]{
 .bloqueenlinea{
     display: inline-block;
     padding-bottom: 6em;
-    padding-right: 3em;
+    padding-right: 4em;
 }
 .parrafoCelda{
     display: table-cell;
