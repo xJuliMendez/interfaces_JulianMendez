@@ -1,0 +1,12 @@
+body{
+    background-image: url("../madrid.jpg");
+    background-repeat: repeat;
+}
+
+.logo{
+    background-image:  url("../logo.png");
+    overflow: scroll;
+    height: 12.5em;
+    width: 12.5em;
+    box-shadow: 10px 10px 10px;
+}

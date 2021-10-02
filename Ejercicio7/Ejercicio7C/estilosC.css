@@ -1,0 +1,13 @@
+body{
+    background-image: url("../madrid.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+}
+.logo{
+    overflow:unset;
+    width: 5em;
+    height: 5em;
+}
+div[class = "logo"] img{
+    box-shadow: 10px 10px 10px;
+}
