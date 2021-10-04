@@ -1,0 +1,15 @@
+*{
+    margin: 10px 10px;
+}
+
+h1{
+    border: 2px solid blue;
+    padding: 0.5em;
+    margin: 1em 1em;
+}
+
+h2{
+    border: 2px solid grey;
+    padding-left: 0.5em;
+    margin: 0.75em 0.75em;
+}
