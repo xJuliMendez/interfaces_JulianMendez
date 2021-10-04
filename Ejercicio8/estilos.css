@@ -1,15 +1,28 @@
 *{
-    margin: 10px 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 1em;
+    
 }
 
 h1{
     border: 2px solid blue;
     padding: 0.5em;
-    margin: 1em 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h2{
     border: 2px solid grey;
     padding-left: 0.5em;
-    margin: 0.75em 0.75em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+ul{
+    border: 2px solid green;
+}
+li
+{
+    margin-bottom: 1em;
 }
