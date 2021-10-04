@@ -1,6 +1,8 @@
 table, tr, th, td{
     border: 1px solid black;
     border-collapse: collapse;
+    vertical-align: bottom;
+    text-align: center;
 }
 th[scope="col"]{
     background-image: url(imagenes/fondo_gris.gif);
@@ -17,6 +19,12 @@ th[class ="euro"]{
     padding-bottom: 0.5em;
     background-image: url(imagenes/euro.png);
     background-repeat: no-repeat;
+}
+.par th[class="euro"] ~ td{
+    background-color: yellow;
+}
+.par th[class="libra"] ~ td{
+    background-color: moccasin;
 }
 th[class ="dolar"]{
     background-color: azure;
