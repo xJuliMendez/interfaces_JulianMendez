@@ -1,8 +1,6 @@
 *{
     margin-right: 10px;
     margin-left: 10px;
-    margin-bottom: 1em;
-    
 }
 
 h1{
@@ -22,7 +20,6 @@ h2{
 ul{
     border: 2px solid green;
 }
-li
-{
-    margin-bottom: 1em;
+li~li{
+    padding-top: 1em;
 }

@@ -1,0 +1,15 @@
+
+.contenedor{
+    border: 1px solid black;
+    width: 60%;
+    margin:auto;
+    height: 400px;
+    box-sizing: border-box;
+}
+.caja{
+    border: 1px solid black;
+    width: calc(33% - 21px);
+    height: calc(33% - 21px);
+    margin: 10px;
+    float: left;
+}
