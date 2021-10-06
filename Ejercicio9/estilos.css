@@ -4,12 +4,37 @@
     width: 60%;
     margin:auto;
     height: 400px;
-    box-sizing: border-box;
+    padding: 0.5em;
 }
 .caja{
     border: 1px solid black;
-    width: calc(33% - 21px);
-    height: calc(33% - 21px);
-    margin: 10px;
-    float: left;
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(33% - 1.1em);
+    height: calc(33% - 1em);
+    margin: 0.5em;
+}
+[class="caja"]:nth-child(2){
+    visibility: hidden;
+}
+[class="caja"]:nth-child(4){
+        background-color: green;
+        display: none;
+}
+[class="caja"]:nth-child(5){
+    background-color: green;
+}
+[class="caja"]:nth-child(6){
+    background-color: green;
+    visibility: hidden;
+}
+[class="caja"]:nth-child(7){
+    background-color: blue;
+}
+[class="caja"]:nth-child(8){
+    background-color: blue;
+    display: none;
+}
+[class="caja"]:nth-child(9){
+    background-color: blue;
 }
