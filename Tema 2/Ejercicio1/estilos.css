@@ -1,0 +1,19 @@
+.envoltorio{
+    display: flex;
+    border: 1px;
+    height: 150px;
+    width: 80%;
+    margin: auto;
+    background-color: cadetblue;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.cajita{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px;
+    height: 33%;
+    width: 120px;
+    background-color:darkolivegreen;
+}
