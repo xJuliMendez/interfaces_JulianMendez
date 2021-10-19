@@ -1,0 +1,81 @@
+.envoltorio{
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    border: 3px solid teal;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.cajita{
+    width: 120px;
+    height: 40px;
+    background-color: orange;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cajita:nth-child(3){
+    align-self: flex-start;
+}
+.envoltorio2{
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    border: 3px solid teal;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.cajita2{
+    width: 120px;
+    height: 40px;
+    background-color: orange;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cajita2:nth-child(3){
+    align-self: center;
+}
+.envoltorio3{
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    border: 3px solid teal;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cajita3{
+    width: 120px;
+    height: 40px;
+    background-color: orange;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cajita3:nth-child(1){
+    height: 45px;
+}
+.cajita3:nth-child(2){
+    height: 30px;
+}
+.cajita3:nth-child(3){
+    height: 60px;
+}
+.cajita3:nth-child(4){
+    height: 70px;
+}
+.cajita3:nth-child(5){
+    height: 15px;
+}
