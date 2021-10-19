@@ -1,0 +1,42 @@
+.cuerpo{
+    height: 600px;
+    width: 66%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cuerpo div{
+    height: 400px;
+    width: 30%;
+    background-color: rgb(48, 57, 66);
+}
+.caja{
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.caja:nth-child(3){
+    height: auto;
+}
+.caja div{
+    font-size: 18px;
+    width: 90%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.caja div:not(:first-child):not(:last-child){
+    background-color: white;
+}
+.caja span:nth-child(1){
+    content: url(./img/more.png);
+    height: 20px;
+    width: 20px;
+}
+.example{
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: white;
+}

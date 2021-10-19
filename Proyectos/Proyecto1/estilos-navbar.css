@@ -5,29 +5,33 @@
     font-size: 12px;
 }
 body{
+    height: 100vh;
     background-image: url("./img/fondo.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     background-color: rgb(238, 238, 238);
     padding-top: 0px;
     display: flex;
     justify-content: center;
 }
 #envoltorio{
+    height: 100%;
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 #navbar{
     position: fixed;
+    top: 0%;
     height: 65px;
     width: 80%;
-    margin-top: 0px;
     background-color: rgb(48, 57, 66);
     display: flex;
     justify-content: space-around;
     align-items: center;
+    justify-self: flex-start;
 }
 .navbar-item{
     width: 13%;
