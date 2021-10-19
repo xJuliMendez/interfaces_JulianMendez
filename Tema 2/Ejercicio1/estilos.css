@@ -1,19 +1,42 @@
 .envoltorio{
     display: flex;
     border: 1px;
-    height: 150px;
+    height: 100px;
     width: 80%;
     margin: auto;
-    background-color: cadetblue;
+    background-color:aqua;
     justify-content: space-between;
     align-items: flex-end;
+    margin-bottom: 1em;
 }
 .cajita{
     display: flex;
     justify-content: center;
     align-content: center;
+    align-items: center;
     border: 1px;
-    height: 33%;
-    width: 120px;
-    background-color:darkolivegreen;
+    height: 40%;
+    width: 140px;
+    background-color:orangered;
+}
+.envoltorio2{
+    display: flex;
+    border: 1px;
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    background-color:aqua;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+.cajita2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 1px;
+    height: 40%;
+    width: 140px;
+    background-color:orangered;
 }
