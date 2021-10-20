@@ -2,6 +2,7 @@
     height: 600px;
     width: 66%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 .cuerpo div{
