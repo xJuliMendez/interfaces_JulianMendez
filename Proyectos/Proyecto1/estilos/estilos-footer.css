@@ -31,7 +31,7 @@
     width: 20px;
 }
 .footer-center div:nth-child(2){
-    content: url(./img/twitter.png);
+    content: url(../img/twitter.png);
     height: 20px;
     width: 20px;
 }
@@ -51,8 +51,8 @@
     align-items: center;
 }
 .footer-left div:nth-child(n):hover{
-    color: lightsalmon;
+    color: grey;
 }
 .footer-center div:nth-child(n):hover{
-    color: lightsalmon;
+    color: grey;
 }
