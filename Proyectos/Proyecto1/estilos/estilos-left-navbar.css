@@ -13,17 +13,17 @@
     color: whitesmoke;
 }
 div#left-navbar div:nth-child(2){
-    content: url(./img/rgb.png);
+    content: url(../img/rgb.png);
     height: 20px;
     width: 20px;
 }
 #left-navbar div:nth-child(3){
-    content: url(./img/usuario.png);
+    content: url(../img/usuario.png);
     height: 20px;
     width: 20px;
 }
 #left-navbar div:nth-child(4){
-    content: url(./img/filter.png);
+    content: url(../img/filter.png);
     height: 20px;
     width: 20px;
 }

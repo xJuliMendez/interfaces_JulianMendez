@@ -26,7 +26,7 @@
     margin: 1rem;
 }
 .footer-center div:nth-child(1){
-    content: url(./img/facebook.png);
+    content: url(../img/facebook.png);
     height: 20px;
     width: 20px;
 }
@@ -36,12 +36,12 @@
     width: 20px;
 }
 .footer-center div:nth-child(3){
-    content: url(./img/instagram.png);
+    content: url(../img/instagram.png);
     height: 20px;
     width: 20px;
 }
 .footer-center div:nth-child(4){
-    content: url(./img/tumblr.png);
+    content: url(../img/tumblr.png);
     height: 20px;
     width: 20px;
 }
@@ -51,8 +51,8 @@
     align-items: center;
 }
 .footer-left div:nth-child(n):hover{
-    background-color: lightsalmon;
+    color: lightsalmon;
 }
 .footer-center div:nth-child(n):hover{
-    background-color: lightsalmon;
+    color: lightsalmon;
 }
