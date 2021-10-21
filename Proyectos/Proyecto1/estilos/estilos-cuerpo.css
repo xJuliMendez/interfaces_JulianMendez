@@ -104,5 +104,5 @@ body{
     margin-left: 1rem;
 }
 .add:hover{
-    color: grey;
+    filter: opacity(.5);
 }
