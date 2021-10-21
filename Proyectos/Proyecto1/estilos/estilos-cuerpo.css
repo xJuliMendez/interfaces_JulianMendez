@@ -51,21 +51,57 @@ body{
     width: 90%;
     height: 6rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 .caja div:not(:first-child):not(:last-child){
     background-color: white;
 }
-.caja span:nth-child(1){
+.settings{
     content: url(../img/more.png);
     height: 20px;
     width: 20px;
 }
+.alinear-texto-imagen div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 .example{
-    border-radius: 10px;
+    color: rgb(48, 57, 66);
+    border-radius: 5px;
     border: 1px solid white;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.example .contenido-example{
+    margin-left: 0.5rem;
+    height: 100%;
+    width: 90%;
+    background-color: white;
+    display: flex;
+}
+.contenido-example div{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.caja-verde{
+    height: 60%;
+    width: 40%;
+    background-color: rgb(88, 206, 78);
+    border-radius: 5px;
+}
+.more-settings{
+    content: url(../img/more_settings.png);
+    height: 20px;
+    width: 20px;
+    margin-left: 1rem;
 }
 .add:hover{
     color: grey;
