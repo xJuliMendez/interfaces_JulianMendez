@@ -49,8 +49,8 @@
     align-items: center;
 }
 .footer-left div:nth-child(n):hover{
-    color: grey;
+    filter: opacity(.5);
 }
 .footer-center div:nth-child(n):hover{
-    color: grey;
+    filter: opacity(.7);
 }
