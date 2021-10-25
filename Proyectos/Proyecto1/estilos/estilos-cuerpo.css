@@ -25,6 +25,8 @@ body {
 	align-items: center;
 }
 
+/*Elemento que contiene las 3 columnas*/
+
 .cuerpo {
 	margin: 2rem;
 	overflow: auto;
@@ -34,11 +36,15 @@ body {
 	justify-content: space-evenly;
 }
 
+/*Cada columna individual*/
+
 .cuerpo div {
 	height: 400px;
 	width: 30%;
 	background-color: rgb(48, 57, 66);
 }
+
+/*Cajas que estan dentro de las comlumnas*/
 
 .caja {
 	box-shadow: 5px 5px 10px black;
@@ -48,7 +54,6 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
-
 .caja:nth-child(3) {
 	height: auto;
 }
@@ -67,6 +72,8 @@ body {
 	background-color: white;
 }
 
+/*Clase que permite poner la imagen de la tuerca*/
+
 .settings {
 	content: url(../img/more.png);
 	height: 20px;
@@ -79,6 +86,8 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
+
+/*Clase que implemente la forma de los example*/
 
 .example {
 	color: rgb(48, 57, 66);
