@@ -1,0 +1,65 @@
+.container{
+    width: 80%;
+    height: 80px;
+    margin: auto;
+   background-color: grey; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 2rem;
+}
+.envoltorio{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.envoltorio div{
+    height: 80%;
+    width: 80px;
+    border: 1px solid;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+}
+.envoltorio div:nth-child(1){
+    order: 1;
+}
+.envoltorio div:nth-child(3){
+    flex-grow: 2;
+}
+.envoltorio div:nth-child(4){
+    flex-grow: 4;
+}
+.container2{
+    width: 80%;
+    height: 150px;
+    margin: auto;
+   background-color:darkcyan; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.envoltorio2{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.envoltorio2 div{
+    height: 80%;
+    width: 80px;
+    border: 1px solid;
+    background-color: burlywood;
+}
+.envoltorio2 div:nth-child(1){
+   flex-grow: 1;
+}
+.envoltorio2 div:nth-child(2){
+    flex-grow: 3;
+}
+.envoltorio2 div:nth-child(3){
+    flex-grow: 1;
+}
