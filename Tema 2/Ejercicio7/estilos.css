@@ -1,7 +1,6 @@
-*{
-    all: none;
-}
 body{
+    margin: 0;
+    padding: 0;
     height: 100vh;
 }
 .contenedor{
@@ -12,13 +11,12 @@ body{
 }
 .navbar{
     background-color: rgb(44, 62, 80);
-    height: 60px;
+    height: 2rem;
     width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem;
 }
 .left-navbar{
     font-size: 2em;
