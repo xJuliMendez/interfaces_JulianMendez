@@ -8,13 +8,18 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="estilos.css">
-  <title>Document</title>
+  <link rel="stylesheet" media="screen" href="estilos.css">
+  <title>Red Social</title>
 </head>
 
 <body>
 
   <?php
+
+  require "baseDatos.php";
+
+  echo $baseDatos.comprobarUsuario();
+
   //Ahora creamos las variables de la sesion ej: Usuario.
   $_SESSION["usuario"] = "N/D";
 
@@ -31,19 +36,22 @@
   }
 
   //Ahora definimos las variables que vamos a usar y las inicializamos a un valor vacio
-  $userBox = $passErr = "";
-  $user = $password = "";
+  $user = $pass = "";
+  $userBox = "usuario";
+  $passBox = "contraseña";
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["nombre"])) {
-      $usErr = $userBox = "Por favor introduzca un nombre de usuario";
+      $userBox = "Por favor introduzac el nombre de usuario";
     } else {
       $user = $userBox = comprobarCadena($_POST["nombre"]);
     }
 
 
     if (empty($_POST["password"])) {
-      echo  "Por favor introduzca una contraseña";
+      $passBox = "Por favor introduzca una contraseña";
+    }else {
+      $pass = comprobarCadena($_POST["password"]);
     }
   }
 
@@ -56,7 +64,10 @@
   }
 
 
-  ?>
+?>
+
+<?php echo $user;
+          echo $pass;?>
 
   <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -69,19 +80,19 @@
 
       <!-- Login Form -->
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <input type="text" id="login" class="fadeIn second" name="nombre" placeholder="usuario" value="<?php echo $userBox; ?>">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="text" id="login" class="fadeIn second" name="nombre" placeholder="<?php echo $userBox;?>" value="<?php echo $user; ?>">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="<?php echo $passBox;?>">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
+        <a class="underlineHover" href="#">Crear Usuario</a>
       </div>
 
     </div>
   </div>
-
+    
 </body>
 
 </html>
