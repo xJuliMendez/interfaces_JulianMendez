@@ -18,8 +18,6 @@
 
   require "baseDatos.php";
 
-  echo $baseDatos.comprobarUsuario();
-
   //Ahora creamos las variables de la sesion ej: Usuario.
   $_SESSION["usuario"] = "N/D";
 
