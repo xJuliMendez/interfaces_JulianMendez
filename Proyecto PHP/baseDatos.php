@@ -1,31 +1,31 @@
 <?php
-
-$userDB = "root";
-$passDB = "";
+$userDB = "phpmyadmin";
+$passDB = "password";
 $baseDatos = "accesodatos";
 
 $conn = mysqli_connect("localhost", $userDB, $passDB, $baseDatos);
-$datos = comprobarUsuario($conn);
 
-function comprobarUsuario($conexion)
+function comprobarUsuario($usuario, $password)
 {
-    if (isAlive($conexion)) {
-        $query = "select * from usuarios";
-        $result = mysqli_query($conexion, $query) or die("no se ha podido hacer la query");
-        return $result -> fetch_array();
-    }else{
-        $conexion = mysqli_connect("localhost", $GLOBALS["userDB"], $GLOBALS["passDB"], $GLOBALS["baseDatos"]);
-        $query = "select * from usuarios";
-        $result = mysqli_query($conexion, $query) or die("no se ha podido hacer la query");
-        return $result -> fetch_array();
+    if ($GLOBALS["conn"]) {
+
+        $query = "select * from usuarios where user = '$usuario'";
+        $result = mysqli_query($GLOBALS["conn"], $query);
+        $resultSet = mysqli_fetch_row($result);
+        
+        return $resultSet["user"];
+        
+//         if ($resultSet["user"] == $usuario) {
+//             return 
+//             if ($resultSet["password"] == $password) {
+//                 echo  "contraseña igual";
+//                 return true;
+//             }
+//         }else {
+//             return false;
+//         }
+//     } else {
+//         return false;
     }
 }
-
-function isAlive($conexion)
-{
-    if ($conexion) {
-        return true;
-    } else {
-        return false;
-    }
-}
+?>
