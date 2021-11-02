@@ -18,6 +18,7 @@
 
   require "baseDatos.php";
 
+
   //Ahora creamos las variables de la sesion ej: Usuario.
   $_SESSION["usuario"] = "N/D";
 
@@ -40,7 +41,7 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["nombre"])) {
-      $userBox = "Por favor introduzac el nombre de usuario";
+      $userBox = "Por favor introduzca el nombre de usuario";
     } else {
       $user = $userBox = comprobarCadena($_POST["nombre"]);
     }
@@ -85,7 +86,7 @@
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#">Crear Usuario</a>
+        <a class="underlineHover" href="signin.php">Crear Usuario</a>
       </div>
 
     </div>
