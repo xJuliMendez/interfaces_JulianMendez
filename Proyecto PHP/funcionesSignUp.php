@@ -16,7 +16,7 @@
 	}
 
 	// Ahora definimos las variables que vamos a usar y las inicializamos a un valor vacio
-	$user = $pass = $pass2 = $email = "";
+	$user = $pass = $pass2 = $email;
 	$userBox = "usuario";
 	$passBox = "contraseña";
 
