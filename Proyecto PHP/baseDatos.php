@@ -5,7 +5,7 @@ $baseDatos = "accesodatos";
 
 $conn = mysqli_connect("localhost", $userDB, $passDB, $baseDatos);
 
-function comprobarUsuario($usuario, $password)
+function logInUsuario($usuario, $password)
 {
     if ($GLOBALS["conn"]) {
 
@@ -13,7 +13,7 @@ function comprobarUsuario($usuario, $password)
         $result = mysqli_query($GLOBALS["conn"], $query);
         $resultSet = $result->fetch_assoc();
         if ($resultSet["password"] == $password) {
-            echo  "contraseña igual";
+            
             return true;
         }
     } else {

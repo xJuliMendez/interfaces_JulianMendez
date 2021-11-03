@@ -9,12 +9,14 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" media="screen" href="estilos.css">
-  <title>Sign In</title>
+  <title>Sign Up</title>
 </head>
 
 <body>
 
-    
+  <?php
+    require "funciones.php"
+  ?>
 
   <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -26,10 +28,10 @@
       </div>
 
       <!-- Login Form -->
-      <form method="post" action="">
-        <input type="text" id="login" class="fadeIn second" name="nombre" placeholder="Nombre de usuario">
+      <form method="post" action="funciones.php">
+        <input type="text" id="login" class="fadeIn second" name="nombreNuevo" placeholder="Nombre de usuario">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Vuelva a introducir la contraseña">
+        <input type="password" id="password" class="fadeIn third" name="password2" placeholder="Vuelva a introducir la contraseña">
         <input type="text" id="login" class="fadeIn second" name="email" placeholder="Correo electronico">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
