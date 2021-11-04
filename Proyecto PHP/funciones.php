@@ -1,42 +1,33 @@
 <?php
 require_once "baseDatos.php";
+setcookie("user", "N/D");
 
 // Ahora creamos las variables de la sesion ej: Usuario.
 
-$_SESSION["user"] = "";
-$_SESSION["pass"] = "";
-$_SESSION["userBox"] = "usuario";
-$_SESSION["passBox"] = "contraseña";
-
+$_SESSION["pass"]="";
 // Ahora establecemos las cookies
-$cookie_name = "usuario";
-$cookie_value = "N/D";
-
-setcookie($cookie_name, $cookie_value, time() + 500, "/");
 
 // Ahora comprobamos si la cookie está setteada
 
-if (!isset($_COOKIE[$cookie_name])) {;
-}
-
 // Ahora definimos las variables que vamos a usar y las inicializamos a un valor vacio
 
-$user = $pass = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["nombre"])) {
-        header("location: http://localhost:3000/index.php?status=user_empty");
+        setcookie("user", "");
+        header("location: http://localhost:3000/index.php");
     } else {
-		$_SESSION["user"] = comprobarCadena($_POST["nombre"]);
-		header("location: http://localhost:3000/index.php?status=". $_SESSION["user"]);
+        $user = comprobarCadena($_POST["nombre"]);
+        setcookie("user", $user);
         if (empty($_POST["password"])) {
-            $_SESSION["pass"] = $pass = "Por favor introduzca una contraseña";
+            $_SESSION["pass"] = "Por favor introduzca una contraseña";
             header("location: http://localhost:3000/index.php");
         } else {
             $_SESSION["pass"] = passEncrypt(comprobarCadena($_POST["password"]));
 
-            if (logInUsuario($_SESSION["user"], $_SESSION["pass"])) {
-                echo "<script>location.href='mainpage.php'</script>";
+            if (logInUsuario($user, $_SESSION["pass"])) {
+                echo $_COOKIE["user"];
+                header("location: http://localhost:3000/mainpage.php");
             } else {
                 header("location: http://localhost:3000/index.php");
                 // echo "<script>location.href='index.php'</script>";
@@ -58,4 +49,24 @@ function comprobarCadena($cad)
 function passEncrypt($cad)
 {
     return hash("sha256", $cad);
+}
+
+function setPlaceholder()
+{   
+    if (!isset($_COOKIE["user"])) {
+        return "Introduzca un nombre de usuario";
+    }
+    elseif ($_COOKIE["user"] == "N/D") {
+        return "Usuario";
+    } elseif (isset($_COOKIE["user"])) {
+        return "Introduzca un nombre de usuario";
+    }
+}
+function setValue()
+{
+    if (!isset($_COOKIE["user"])) {
+    } elseif ($_COOKIE["user"] == "N/D") {
+    } else {
+        echo $_COOKIE["user"];
+    }
 }
