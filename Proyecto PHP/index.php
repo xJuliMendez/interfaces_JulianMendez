@@ -1,12 +1,5 @@
 <?php
-require_once "funciones.php";
-session_start();
-
-if (!isset($_COOKIE["user"])) {
-    setcookie("user", "N/D");
-}
-
-
+include "funciones.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +25,9 @@ if (!isset($_COOKIE["user"])) {
 				<img id="icon" alt="User Icon" />
 			</div>
 
-			<form method="post" action="funciones.php">
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 				<input type="text" id="login" class="fadeIn second" name="nombre" placeholder="<?php echo setPlaceholder(); ?>" value ="<?php echo setValue();?>">
-				<input type="password" id="password" class="fadeIn third" name="password" placeholder="contraseña">
+				<input type="password" id="password" class="fadeIn third" name="password" placeholder="<?php echo $GLOBALS["pass"]; ?>">
 				<input type="submit" class="fadeIn fourth" value="Log In">
 			</form>
 

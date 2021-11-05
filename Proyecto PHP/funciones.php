@@ -1,38 +1,34 @@
 <?php
-require_once "baseDatos.php";
-setcookie("user", "N/D");
+include "baseDatos.php";
+setcookie("user", "");
 
-// Ahora creamos las variables de la sesion ej: Usuario.
+session_start();
 
-$_SESSION["pass"]="";
-// Ahora establecemos las cookies
+if (!isset($GLOBALS["pass"])) {
+    $GLOBALS["pass"] = "Contraseña";
+}
 
-// Ahora comprobamos si la cookie está setteada
-
-// Ahora definimos las variables que vamos a usar y las inicializamos a un valor vacio
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $GLOBALS["pass"] = "Por favor introduzca contraseña";
+
     if (empty($_POST["nombre"])) {
-        setcookie("user", "");
-        header("location: http://localhost:3000/index.php");
+        $_COOKIE["user"] = "";
     } else {
         $user = comprobarCadena($_POST["nombre"]);
-        setcookie("user", $user);
+        $_COOKIE["user"] = $user;
+        // setcookie("user", $user);
         if (empty($_POST["password"])) {
-            $_SESSION["pass"] = "Por favor introduzca una contraseña";
-            header("location: http://localhost:3000/index.php");
+            $GLOBALS["pass"] = "Por favor introduzca una contraseña";
         } else {
-            $_SESSION["pass"] = passEncrypt(comprobarCadena($_POST["password"]));
+            $pass = passEncrypt(comprobarCadena($_POST["password"]));
 
-            if (logInUsuario($user, $_SESSION["pass"])) {
+            if (logInUsuario($user, $pass)) {
                 echo $_COOKIE["user"];
                 header("location: http://localhost:3000/mainpage.php");
-            } else {
-                header("location: http://localhost:3000/index.php");
-                // echo "<script>location.href='index.php'</script>";
             }
-
         }
     }
 
@@ -52,21 +48,26 @@ function passEncrypt($cad)
 }
 
 function setPlaceholder()
-{   
+{
     if (!isset($_COOKIE["user"])) {
-        return "Introduzca un nombre de usuario";
-    }
-    elseif ($_COOKIE["user"] == "N/D") {
         return "Usuario";
+    } elseif ($_COOKIE["user"] == "N/D") {
+        return "Introduzca un nombre de usuario";
     } elseif (isset($_COOKIE["user"])) {
         return "Introduzca un nombre de usuario";
     }
 }
 function setValue()
 {
-    if (!isset($_COOKIE["user"])) {
-    } elseif ($_COOKIE["user"] == "N/D") {
-    } else {
+    if (isset($_COOKIE["user"]) && !empty($_COOKIE["user"])) {
         echo $_COOKIE["user"];
+    }
+}
+function setPassPlaceholder()
+{
+    if (isset($GLOBALS["pass"]) && $GLOBALS["pass"] == "") {
+        return "Contraseña";
+    } else {
+        return "Por favor introduzca la contraseña";
     }
 }
