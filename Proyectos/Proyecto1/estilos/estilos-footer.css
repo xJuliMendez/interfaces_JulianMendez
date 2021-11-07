@@ -23,6 +23,7 @@
 .footer-center div{
     margin: 1rem;
 }
+/*Estos selectores se encargar de cargar las imagenes y de establecer un tamaño para las cajas de las redes sociales*/
 .footer-center div:nth-child(1){
     content: url(../img/facebook.png);
     height: 20px;
