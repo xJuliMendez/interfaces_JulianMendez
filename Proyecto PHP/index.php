@@ -20,7 +20,6 @@ include "funciones.php";
 
 	<div class="wrapper fadeInDown">
 		<div id="formContent">
-
 			<div class="fadeIn first">
 				<img id="icon" alt="User Icon" />
 			</div>
