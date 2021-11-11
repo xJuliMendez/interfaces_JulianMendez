@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (logInUsuario($user, $pass)) {
                 echo $_COOKIE["user"];
-                header("location: http://localhost:3000/mainpage.php");
+                header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
             }
         }
     }

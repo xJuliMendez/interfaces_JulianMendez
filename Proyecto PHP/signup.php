@@ -28,11 +28,11 @@
       </div>
 
       <!-- Login Form -->
-      <form method="post" action="funciones.php">
+      <form method="post" action="funcionesSignUp.php">
         <input type="text" id="login" class="fadeIn second" name="nombreNuevo" placeholder="Nombre de usuario">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-        <input type="password" id="password" class="fadeIn third" name="password2" placeholder="Vuelva a introducir la contraseña">
-        <input type="text" id="login" class="fadeIn second" name="email" placeholder="Correo electronico">
+        <input type="password" id="password" class="fadeIn fourth" name="password2" placeholder="Vuelva a introducir la contraseña">
+        <input type="text" id="login" class="fadeIn fourth" name="email" placeholder="Correo electronico">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
 
