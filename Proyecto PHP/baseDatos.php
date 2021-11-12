@@ -10,7 +10,6 @@ function logInUsuario($usuario, $password)
     if ($GLOBALS["conn"] ) {
 
         $query = "select * from usuarios where user = '$usuario'";
-        echo $query;
         $result = mysqli_query($GLOBALS["conn"] , $query);
         $resultSet = $result->fetch_assoc();
         if ($resultSet["password"] == $password) {

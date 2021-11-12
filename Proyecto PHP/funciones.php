@@ -19,14 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $user = comprobarCadena($_POST["nombre"]);
         $_COOKIE["user"] = $user;
-        // setcookie("user", $user);
         if (empty($_POST["password"])) {
             $GLOBALS["pass"] = "Por favor introduzca una contraseña";
         } else {
             $pass = passEncrypt(comprobarCadena($_POST["password"]));
 
             if (logInUsuario($user, $pass)) {
-                echo $_COOKIE["user"];
                 header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
             }
         }
@@ -61,13 +59,5 @@ function setValue()
 {
     if (isset($_COOKIE["user"]) && !empty($_COOKIE["user"])) {
         echo $_COOKIE["user"];
-    }
-}
-function setPassPlaceholder()
-{
-    if (isset($GLOBALS["pass"]) && $GLOBALS["pass"] == "") {
-        return "Contraseña";
-    } else {
-        return "Por favor introduzca la contraseña";
     }
 }
