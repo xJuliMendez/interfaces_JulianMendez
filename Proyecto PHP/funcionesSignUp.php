@@ -1,45 +1,14 @@
 <?php
-	require "baseDatos.php";
+	include "baseDatos.php";
 
-	// Ahora creamos las variables de la sesion ej: Usuario.
-	$_SESSION["usuario"] = "N/D";
+	setcookie("usuario", "");
+	$_SESSION["contraseñaNueva"]="";
+	setcookie("email","");
 
-	// Ahora establecemos las cookies
-	$cookie_name = "usuario";
-	$cookie_value = "N/D";
+	$user = $pass = $pass2 = $email = "";
 
-	setcookie($cookie_name, $cookie_value, time() + 500, "/");
-
-	// Ahora comprobamos si la cookie está setteada
-
-	if (!isset($_COOKIE[$cookie_name])) {;
-	}
-
-	// Ahora definimos las variables que vamos a usar y las inicializamos a un valor vacio
-	$user = $pass = $pass2 = $email;
-	$userBox = "usuario";
-	$passBox = "contraseña";
-
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		if (empty($_POST["nombre"])) {
-			$userBox = "Por favor introduzca el nombre de usuario";
-		} else {
-			$user = $userBox = comprobarCadena($_POST["nombre"]);
-
-			if (empty($_POST["password"])) {
-				$passBox = "Por favor introduzca una contraseña";
-			} else {
-				$pass = passEncrypt(comprobarCadena($_POST["password"]));
-				
-				if(empty($_POST["password2"])){
-					$passBox = "Por favor vuelva a introducir la contraseña";
-				}else{
-					$pass2 = $_POST["password2"];
-
-				}
-			}
-		}
-
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+		if(empty($_POST["nombreNuevo"]))
 	}
 
 	function comprobarCadena($cad)
