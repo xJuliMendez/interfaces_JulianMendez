@@ -15,7 +15,7 @@
 <body>
 
   <?php
-    require "funciones.php"
+    include "funcionesSignUp.php"
   ?>
 
   <div class="wrapper fadeInDown">
@@ -28,9 +28,9 @@
       </div>
 
       <!-- Login Form -->
-      <form method="post" action="funcionesSignUp.php">
-        <input type="text" id="login" class="fadeIn second" name="nombreNuevo" placeholder="Nombre de usuario">
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <input type="text" id="login" class="fadeIn second" name="nombreNuevo" placeholder="<?php echo setPlaceholderUsuario();?>" value = "<?php echo setValueUsuario();?>">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="<?php echo $GLOBALS["contraseña"];?>">
         <input type="password" id="password" class="fadeIn fourth" name="password2" placeholder="Vuelva a introducir la contraseña">
         <input type="text" id="login" class="fadeIn fourth" name="email" placeholder="Correo electronico">
         <input type="submit" class="fadeIn fourth" value="Log In">

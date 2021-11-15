@@ -22,9 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["password"])) {
             $GLOBALS["pass"] = "Por favor introduzca una contraseña";
         } else {
-            $pass = passEncrypt(comprobarCadena($_POST["password"]));
+            $contra = passEncrypt(comprobarCadena($_POST["password"]));
 
-            if (logInUsuario($user, $pass)) {
+            if (logInUsuario($user, $contra)) {
                 header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
             }
         }
@@ -49,9 +49,7 @@ function setPlaceholder()
 {
     if (!isset($_COOKIE["user"])) {
         return "Usuario";
-    } elseif ($_COOKIE["user"] == "N/D") {
-        return "Introduzca un nombre de usuario";
-    } elseif (isset($_COOKIE["user"])) {
+    }elseif (isset($_COOKIE["user"])) {
         return "Introduzca un nombre de usuario";
     }
 }
