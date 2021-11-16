@@ -1,0 +1,155 @@
+body {
+  padding: 0%;
+  margin: 0%;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  background-image: url("./img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(238, 238, 238);
+}
+.header {
+  grid-area: 1/2 / span 1/12;
+  background-color: rgb(48, 57, 66);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar-item {
+  width: 13%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: end;
+  color: whitesmoke;
+}
+.navbar-img-1 {
+  content: url(./img/piechart.png);
+  width: 35px;
+  height: 35px;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-img-2 {
+  content: url(./img/package.png);
+  width: 35px;
+  height: 35px;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-img-3 {
+  content: url(./img/tag.png);
+  width: 35px;
+  height: 35px;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-img-4 {
+  content: url(./img/percentage.png);
+  width: 35px;
+  height: 35px;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-img-5 {
+  content: url(./img/3dchart.png);
+  width: 35px;
+  height: 35px;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-item:hover {
+  background-color: grey;
+}
+.main {
+  grid-area: 3/4 / span 8 / span 6;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+  background-color: rgb(48, 57, 66);
+  box-shadow: 5px 5px 10px black;
+  color: whitesmoke;
+  grid-template-areas:
+    "texto"
+    "example"
+    "example2"
+    "example3"
+    "add";
+}
+.texto {
+  grid-area: 2/2 / span 1 / span 4;
+  font-size: 20px;
+  text-align: center;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+}
+.settings {
+  content: url(./img/more.png);
+  height: 20px;
+  width: 20px;
+}
+.example {
+  grid-area: 4/2 / span 5 / span 10;
+  font-size: 20px;
+  color: rgb(48, 57, 66);
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "example"
+    "caja-verde more-settings";
+}
+.example2 {
+  grid-area: 10/2 / span 5 / span 10;
+  font-size: 20px;
+  color: rgb(48, 57, 66);
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.example3 {
+  grid-area: 16/2 / span 5 / span 10;
+  font-size: 20px;
+  color: rgb(48, 57, 66);
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.add {
+  grid-area: 22/2 / span 2 / span 2;
+  font-size: 20px;
+}
+.caja-verde {
+  height: 60%;
+  width: 40%;
+  background-color: rgb(88, 206, 78);
+  border-radius: 5px;
+}
+.more-settings {
+  content: url(./img/more_settings.png);
+  height: 20px;
+  width: 20px;
+  margin-left: 1rem;
+}
+.add:hover {
+  filter: opacity(0.5);
+}

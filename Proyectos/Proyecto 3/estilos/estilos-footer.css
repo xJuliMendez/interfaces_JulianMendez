@@ -1,0 +1,57 @@
+#footer{
+    color: whitesmoke;
+    width: 100%;
+    height: 25px;
+    background-color:rgb(254, 87, 35);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footer-left{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-left div{
+    margin: 1rem;
+}
+.footer-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-center div{
+    margin: 1rem;
+}
+/*Estos selectores se encargar de cargar las imagenes y de establecer un tamaño para las cajas de las redes sociales*/
+.footer-center div:nth-child(1){
+    content: url(../img/facebook.png);
+    height: 20px;
+    width: 20px;
+}
+.footer-center div:nth-child(2){
+    content: url(../img/twitter.png);
+    height: 20px;
+    width: 20px;
+}
+.footer-center div:nth-child(3){
+    content: url(../img/instagram.png);
+    height: 20px;
+    width: 20px;
+}
+.footer-center div:nth-child(4){
+    content: url(../img/tumblr.png);
+    height: 20px;
+    width: 20px;
+}
+.footer-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-left div:nth-child(n):hover{
+    filter: opacity(.5);
+}
+.footer-center div:nth-child(n):hover{
+    filter: opacity(.7);
+}

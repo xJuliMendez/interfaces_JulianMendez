@@ -1,0 +1,59 @@
+#navbar {
+	height: 65px;
+	width: 80%;
+	background-color: rgb(48, 57, 66);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	justify-self: flex-start;
+}
+
+.navbar-item {
+	width: 13%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: end;
+	color: whitesmoke;
+}
+
+.navbar-img-1 {
+	content: url(../img/piechart.png);
+	width: 35px;
+	height: 35px;
+	padding-bottom: 0.5rem;
+}
+
+.navbar-img-2 {
+	content: url(../img/package.png);
+	width: 35px;
+	height: 35px;
+	padding-bottom: 0.5rem;
+}
+
+.navbar-img-3 {
+	content: url(../img/tag.png);
+	width: 35px;
+	height: 35px;
+	padding-bottom: 0.5rem;
+}
+
+.navbar-img-4 {
+	content: url(../img/percentage.png);
+	width: 35px;
+	height: 35px;
+	padding-bottom: 0.5rem;
+}
+
+.navbar-img-5 {
+	content: url(../img/3dchart.png);
+	width: 35px;
+	height: 35px;
+	padding-bottom: 0.5rem;
+}
+
+.navbar-item:hover {
+	background-color: grey;
+}
