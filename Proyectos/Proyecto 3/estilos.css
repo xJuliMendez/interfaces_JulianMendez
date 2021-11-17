@@ -2,28 +2,36 @@ body {
   padding: 0%;
   margin: 0%;
 }
+
 .container {
-  height: 100vh;
+  height: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto;
   grid-template-areas:
     "header"
     "main"
+    "main2"
+    "main3"
     "footer";
   background-image: url("./img/fondo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgb(238, 238, 238);
 }
+
 .header {
-  grid-area: 1/2 / span 1/12;
+  position: sticky;
+  top: 0;
+  font-size: 0;
+  grid-area: header;
   background-color: rgb(48, 57, 66);
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .navbar-item {
   width: 13%;
   height: 100%;
@@ -34,6 +42,14 @@ body {
   text-align: end;
   color: whitesmoke;
 }
+
+.navbar-img-0 {
+  content: url(./img/hamburguesa.png);
+  width: 35px;
+  height: 35px;
+  padding-bottom: 0.5rem;
+}
+
 .navbar-img-1 {
   content: url(./img/piechart.png);
   width: 35px;
@@ -72,48 +88,77 @@ body {
 .navbar-item:hover {
   background-color: grey;
 }
+
 .main {
-  grid-area: 3/4 / span 8 / span 6;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(24, 1fr);
+  grid-area: main;
+  width: 70%;
+  height: 20rem;
   background-color: rgb(48, 57, 66);
   box-shadow: 5px 5px 10px black;
   color: whitesmoke;
-  grid-template-areas:
-    "texto"
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.main div{
+  height: 4rem;
+  align-self: center;
+}
+.main2 {
+  grid-area: main2;
+  width: 70%;
+  height: 20rem;
+  background-color: rgb(48, 57, 66);
+  box-shadow: 5px 5px 10px black;
+  color: whitesmoke;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-areas: "texto"
     "example"
-    "example2"
-    "example3"
-    "add";
+    "example"
+    "example";
+  grid-template-rows: repeat(4, 1fr);
+}
+.main3 {
+  grid-area: main3;
+  width: 70%;
+  height: 20rem;
+  background-color: rgb(48, 57, 66);
+  box-shadow: 5px 5px 10px black;
+  color: whitesmoke;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-areas: "texto"
+    "example"
+    "example"
+    "example";
+  grid-template-rows: repeat(4, 1fr);
 }
 .texto {
-  grid-area: 2/2 / span 1 / span 4;
   font-size: 20px;
-  text-align: center;
   align-self: center;
-  display: flex;
-  justify-content: space-between;
 }
+
 .settings {
+  grid-area: settings;
   content: url(./img/more.png);
   height: 20px;
   width: 20px;
 }
+
 .example {
-  grid-area: 4/2 / span 5 / span 10;
+  /* grid-area: example; */
+  height: 100px;
+  width: 70%;
   font-size: 20px;
   color: rgb(48, 57, 66);
   border-radius: 5px;
   border: 1px solid white;
   background-color: white;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas:
-    " example"
-    "caja-verde more-settings";
 }
+
 .example2 {
   grid-area: 10/2 / span 5 / span 10;
   font-size: 20px;
@@ -124,6 +169,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .example3 {
   grid-area: 16/2 / span 5 / span 10;
   font-size: 20px;
@@ -134,22 +180,82 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .add {
   grid-area: 22/2 / span 2 / span 2;
   font-size: 20px;
 }
+
 .caja-verde {
   height: 60%;
   width: 40%;
   background-color: rgb(88, 206, 78);
   border-radius: 5px;
 }
+
 .more-settings {
   content: url(./img/more_settings.png);
   height: 20px;
   width: 20px;
   margin-left: 1rem;
 }
+
 .add:hover {
   filter: opacity(0.5);
 }
+
+.footer {
+  grid-area: footer;
+  position: sticky;
+  top: 100%;
+  font-size: 12px;
+  align-self: flex-end;
+  height: 1.5rem;
+  background-color: rgb(254, 87, 35);
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer div {
+  align-self: center;
+}
+
+.facebook {
+  content: url(./img/facebook.png);
+  height: 20px;
+  width: 20px;
+}
+
+.twitter {
+  content: url(./img/twitter.png);
+  height: 20px;
+  width: 20px;
+}
+
+.instagram {
+  content: url(./img/instagram.png);
+  height: 20px;
+  width: 20px;
+}
+
+.tumblr {
+  content: url(./img/tumblr.png);
+  height: 20px;
+  width: 20px;
+}
+
+.footer div:hover {
+  filter: opacity(.5);
+}
+
+/* @media screen and (min-width: 768px) {
+  .container {
+      grid-template-areas: "header header"
+      "left main"
+      "left main"
+      "left main"
+      "footer footer";
+      grid-template-columns: 1rem 1fr;
+      grid-template-rows: 1fr auto auto;
+  }
+} */
