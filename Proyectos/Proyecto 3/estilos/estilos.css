@@ -1,0 +1,260 @@
+body {
+  padding: 0%;
+  margin: 0%;
+}
+
+.container {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas:
+    "header"
+    "shipment"
+    "printing"
+    "done"
+    "footer";
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(238, 238, 238);
+}
+
+.shipment {
+  font-size: 18px;
+  grid-area: shipment;
+  width: 70%;
+  height: 20rem;
+  background-color: rgb(48, 57, 66);
+  box-shadow: 5px 5px 10px black;
+  color: whitesmoke;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.printing {
+  font-size: 18px;
+  grid-area: printing;
+  width: 70%;
+  height: 20rem;
+  background-color: rgb(48, 57, 66);
+  box-shadow: 5px 5px 10px black;
+  color: whitesmoke;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.done {
+  font-size: 18px;
+  grid-area: done;
+  width: 70%;
+  height: 20rem;
+  background-color: rgb(48, 57, 66);
+  box-shadow: 5px 5px 10px black;
+  color: whitesmoke;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.add{
+  align-self:baseline;
+}
+
+div.texto{
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.texto {
+  font-size: 20px;
+  align-self: center;
+}
+
+.settings {
+  grid-area: settings;
+  content: url(../img/more.png);
+  height: 20px;
+  width: 20px;
+}
+
+.caja-blanca {
+  /* grid-area: caja-blanca; */
+  height: 60%;
+  width: 70%;
+  font-size: 20px;
+  color: rgb(48, 57, 66);
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.caja-blanca2 {
+  grid-area: 10/2 / span 5 / span 10;
+  font-size: 20px;
+  color: rgb(48, 57, 66);
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.caja-blanca3 {
+  grid-area: 16/2 / span 5 / span 10;
+  font-size: 20px;
+  color: rgb(48, 57, 66);
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.caja-verde {
+  height: 60%;
+  width: 40%;
+  background-color: rgb(88, 206, 78);
+  border-radius: 5px;
+}
+
+.more-settings {
+  content: url(../img/more_settings.png);
+  height: 20px;
+  width: 20px;
+  margin-left: 1rem;
+}
+
+.add:hover {
+  filter: opacity(0.5);
+}
+
+.footer {
+  grid-area: footer;
+  position: sticky;
+  top: 100%;
+  font-size: 12px;
+  align-self: flex-end;
+  height: 1.5rem;
+  background-color: rgb(254, 87, 35);
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer div {
+  align-self: center;
+}
+
+.facebook {
+  content: url(../img/facebook.png);
+  height: 20px;
+  width: 20px;
+}
+
+.twitter {
+  content: url(../img/twitter.png);
+  height: 20px;
+  width: 20px;
+}
+
+.instagram {
+  content: url(../img/instagram.png);
+  height: 20px;
+  width: 20px;
+}
+
+.tumblr {
+  content: url(../img/tumblr.png);
+  height: 20px;
+  width: 20px;
+}
+
+.footer div:hover {
+  filter: opacity(.5);
+}
+
+@media screen and (min-width: 768px) {
+  .header{
+    font-size: 12px;
+  }
+  .navbar-item:first-child{
+    visibility: hidden;
+    display: none;
+  }
+  #left{
+    visibility: visible;
+  }
+}
+@media screen and (min-width: 960px) {
+  .container{
+    grid-template-areas: 
+    "header header"
+    "shipment printing"
+    "done ..."
+    "footer footer";
+    grid-template-columns: 1fr 1fr;
+  }
+  .header{
+    font-size: 12px;
+  }
+  .navbar-item:first-child{
+    visibility: hidden;
+    display: none;
+  }
+  #left{
+    visibility: visible;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container{
+    grid-template-areas: 
+    "header header header"
+    "shipment printing done"
+    "footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4rem auto 1rem;
+  }
+
+  div.container{
+    align-items: center;
+    justify-items: center;
+  }
+  .header{
+    font-size: 14px;
+    height: 100%;
+    width: 80%;
+    justify-self: center;
+  }
+  .shipment, .printing, .done{
+    height: 20rem;
+    width: 60%;
+  }
+  .navbar-item:first-child{
+    visibility: hidden;
+    display: none;
+  }
+  #left{
+    visibility: visible;
+  }
+  .footer{
+    width: 100%;
+  }
+}

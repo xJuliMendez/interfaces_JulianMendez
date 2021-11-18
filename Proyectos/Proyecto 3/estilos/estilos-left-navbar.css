@@ -1,4 +1,5 @@
-#left-navbar{
+#left{
+    visibility: hidden;
     position: fixed;
     top: 30%;
     left: 0%;
@@ -11,21 +12,21 @@
     align-items: center;
     color: whitesmoke;
 }
-div#left-navbar div:nth-child(2){
+div#left div:nth-child(2){
     content: url(../img/rgb.png);
     height: 20px;
     width: 20px;
 }
-#left-navbar div:nth-child(3){
+#left div:nth-child(3){
     content: url(../img/usuario.png);
     height: 20px;
     width: 20px;
 }
-#left-navbar div:nth-child(4){
+#left div:nth-child(4){
     content: url(../img/filter.png);
     height: 20px;
     width: 20px;
 }
-#left-navbar div:hover{
+#left div:hover{
     filter: opacity(.5);
 }
