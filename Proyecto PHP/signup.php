@@ -32,7 +32,7 @@
         <input type="text" id="login" class="fadeIn second" name="nombreNuevo" placeholder="<?php echo setPlaceholderUsuario();?>" value = "<?php echo setValueUsuario();?>">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="<?php echo $GLOBALS["contraseña"];?>">
         <input type="password" id="password" class="fadeIn fourth" name="password2" placeholder="Vuelva a introducir la contraseña">
-        <input type="text" id="login" class="fadeIn fourth" name="email" placeholder="Correo electronico">
+        <input type="text" id="login" class="fadeIn fourth" name="correo" placeholder="<?php echo setPlaceholderCorreo();?>" value = "<?php echo setValueCorreo();?>">
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
 

@@ -22,3 +22,10 @@ function logInUsuario($usuario, $password)
         return false;
     }
 }
+
+function crearUsuario($usuario, $password, $correo){
+    if ($GLOBALS["conn"]) {
+        $query = "insert into usuarios (user,password,email) values ('$usuario', '$correo', '$password');";
+        mysqli_query($GLOBALS["conn"], $query);
+    }
+}

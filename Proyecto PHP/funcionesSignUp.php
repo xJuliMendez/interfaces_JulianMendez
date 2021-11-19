@@ -1,37 +1,48 @@
 <?php
-setcookie("usuario", "");
-if (!isset($GLOBALS["contraseña"])) {
+include "baseDatos.php";
+setcookie("user", "");
+setcookie("correo", "");
+if (!isset($GLOBALS["contraseña"]) && !isset($GLOBALS["user"]) && !isset($GLOBALS["correo"])) {
     $GLOBALS["contraseña"] = "Contraseña";
+    $GLOBALS["user"] = "";
+    $GLOBALS["correo"] = "";
 }
-setcookie("email", "");
 
-$user = $pass = $pass2 = $email = "";
+
+$pass = $pass2 = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["nombreNuevo"])) {
-        $_COOKIE["usuario"] = "";
-		$GLOBALS["contraseña"] = "Por favor introduzca una contraseña";
+        $GLOBALS["user"] = "N/D";
     }else{
-		$user = comprobarCadena($_POST["nombreNuevo"]);
-        $_COOKIE["usuario"] = $user;
-        if (empty($_POST["password"])) {
-            $GLOBALS["contraseña"] = "Por favor introduzca una contraseña";
-        } else {
-			if(!empty($_POST["password2"]) && comprobarPassword()){
-				$contra = passEncrypt(comprobarCadena($_POST["password"]));
-				if(!empty($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
-					$_COOKIE["email"] = $_POST["email"];
-				}
-			}
-            
-
-            if (logInUsuario($user, $contra)) {
-                header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
-            }
+		$GLOBALS["user"] = comprobarCadena($_POST["nombreNuevo"]);
+        $_COOKIE["user"] = $GLOBALS["user"];
+	}
+    if (empty($_POST["password"])) {
+        $GLOBALS["contraseña"] = "Introduzca una contraseña";
+    }else{
+        $pass = passEncrypt($_POST["password"]);
+        if (!empty($_POST["password"])) {
+            $pass2 = passEncrypt($_POST["password2"]);
+        }
+    }
+    if(!empty($_POST["correo"])){
+        if (filter_var($_POST["correo"], FILTER_VALIDATE_EMAIL)) {
+            $_COOKIE["correo"] = $GLOBALS["correo"] = $_POST["correo"];
+        }else{
+            $GLOBALS["correo"] = "Correo no valido";
+        }
+        
+    }else{
+        $GLOBALS["correo"] = "N/D";
+    }
+    if (!empty($_COOKIE["user"]) && !empty($_COOKIE["correo"]) && isSamePass($pass,$pass2)) {
+        
+        if (crearUsuario($_COOKIE["user"],$_COOKIE["correo"], $pass)){
+            header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
         }
 
-	}
-
+    }
 }
 
 function comprobarCadena($cad)
@@ -47,18 +58,26 @@ function passEncrypt($cad)
     return hash("sha256", $cad);
 }
 
+function isSamePass($pass0, $pass1){
+    if (strcmp($pass0,$pass1) == 0) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function setPlaceholderUsuario()
 {
-    if (!isset($_COOKIE["usuario"])) {
+    if ($GLOBALS["user"] == "") {
         return "Nombre de Usuario";
-    } elseif (isset($_COOKIE["usuario"])) {
+    } elseif ($GLOBALS["user"] == "N/D") {
         return "Introduzca un nombre de usuario";
     }
 }
 function setValueUsuario()
 {
-    if (isset($_COOKIE["usuario"]) && !empty($_COOKIE["usuario"])) {
-        echo $_COOKIE["usuario"];
+    if ($GLOBALS["user"] != "" && $GLOBALS["user"] != "N/D") {
+        return $GLOBALS["user"];
     }
 }
 function comprobarPassword(){
@@ -67,4 +86,20 @@ function comprobarPassword(){
 	}else{
 		return false;
 	}
+}
+function setPlaceholderCorreo()
+{
+    if ($GLOBALS["correo"] == "") {
+        return "Correo electrónico";
+    } elseif ($GLOBALS["correo"] == "N/D") {
+        return "Introduzca un correo electrónico";
+    }elseif ($GLOBALS["correo"] == "Correo no valido"){
+        return $GLOBALS["correo"];
+    }
+}
+function setValueCorreo()
+{
+    if ($GLOBALS["correo"] != "" && $GLOBALS["correo"] != "N/D" && $GLOBALS["correo"] != "Correo no valido") {
+        return $GLOBALS["correo"];
+    }
 }
