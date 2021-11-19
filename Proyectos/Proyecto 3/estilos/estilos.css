@@ -60,7 +60,7 @@ body {
   font-size: 18px;
   grid-area: done;
   width: 70%;
-  height: 20rem;
+  height: auto;
   background-color: rgb(48, 57, 66);
   box-shadow: 5px 5px 10px black;
   color: whitesmoke;
@@ -73,14 +73,10 @@ body {
   padding: 1rem;
 }
 
-.add{
-  align-self:baseline;
-}
-
 div.texto{
-  width: 70%;
+  width: 90%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .texto {
@@ -97,8 +93,8 @@ div.texto{
 
 .caja-blanca {
   /* grid-area: caja-blanca; */
-  height: 60%;
-  width: 70%;
+  height: 4.5rem;
+  width: 90%;
   font-size: 20px;
   color: rgb(48, 57, 66);
   border-radius: 5px;
@@ -106,32 +102,15 @@ div.texto{
   background-color: white;
 }
 
-.caja-blanca2 {
-  grid-area: 10/2 / span 5 / span 10;
-  font-size: 20px;
-  color: rgb(48, 57, 66);
-  border-radius: 5px;
-  border: 1px solid white;
-  background-color: white;
+.caja-blanca div{
   display: flex;
-  flex-direction: column;
+  margin-top: 0.5rem;
 }
-
-.caja-blanca3 {
-  grid-area: 16/2 / span 5 / span 10;
-  font-size: 20px;
-  color: rgb(48, 57, 66);
-  border-radius: 5px;
-  border: 1px solid white;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-}
-
 
 .caja-verde {
-  height: 60%;
+  height: 2rem;
   width: 40%;
+  max-width: 7rem;
   background-color: rgb(88, 206, 78);
   border-radius: 5px;
 }
@@ -141,10 +120,6 @@ div.texto{
   height: 20px;
   width: 20px;
   margin-left: 1rem;
-}
-
-.add:hover {
-  filter: opacity(0.5);
 }
 
 .footer {
@@ -192,18 +167,6 @@ div.texto{
 }
 
 @media screen and (min-width: 768px) {
-  .header{
-    font-size: 12px;
-  }
-  .navbar-item:first-child{
-    visibility: hidden;
-    display: none;
-  }
-  #left{
-    visibility: visible;
-  }
-}
-@media screen and (min-width: 960px) {
   .container{
     grid-template-areas: 
     "header header"
@@ -223,29 +186,20 @@ div.texto{
     visibility: visible;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
   .container{
-    grid-template-areas: 
-    "header header header"
-    "shipment printing done"
-    "footer footer footer";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 4rem auto 1rem;
-  }
-
-  div.container{
-    align-items: center;
-    justify-items: center;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .header{
     font-size: 14px;
     height: 100%;
     width: 80%;
-    justify-self: center;
+    align-items: center;
   }
   .shipment, .printing, .done{
-    height: 20rem;
-    width: 60%;
+    width: 20%;
   }
   .navbar-item:first-child{
     visibility: hidden;
