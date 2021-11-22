@@ -50,21 +50,12 @@ div.container aside {
     height: 26rem;
   }
   div.container aside{
-    height: 3rem;
+    height: fit-content;
   }
 }
 @media screen and (min-width: 1200px) {
-  div.container {
-    display: grid;
-    grid-template-areas: "nav nav" 
-    "article aside";
-    grid-template-columns: 4fr 2fr;
-  }
   div.container article{
     background-image: url(./img/content-is-like-water-5.jpg);
     height: 30rem;
-  }
-  div.container aside{
-    height: 3rem;
   }
 }
