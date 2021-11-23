@@ -37,3 +37,16 @@ img {
 		grid-column: span 2;
 	}
 }
+@media screen and (min-width:1024px) {
+	.wrapper{
+		grid-template-columns: repeat(4, 1fr);   
+		grid-template-rows: 1fr 1fr auto auto;
+	}
+	.text{
+		grid-area: 1/2/span 2/span 2;
+	}
+	.wide{
+		grid-column: span 2;
+		grid-row: span 1;
+	}
+}
