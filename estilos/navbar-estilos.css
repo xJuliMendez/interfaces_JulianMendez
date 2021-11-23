@@ -2,6 +2,7 @@
     max-height: 4rem;
     position: sticky;
     top: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0;
     grid-area: header;
     background-color: rgb(48, 57, 66);
@@ -11,6 +12,7 @@
   }
   
   .navbar-item {
+    margin: 1rem;
     width: 13%;
     height: 100%;
     display: flex;
@@ -20,7 +22,7 @@
     text-align: end;
     color: whitesmoke;
   }
-  
+  /*Estilos para cada imagen de la barra de navegacion*/
   .navbar-img-0 {
     content: url(../img/hamburguesa.png);
     width: 35px;
