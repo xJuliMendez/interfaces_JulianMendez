@@ -1,8 +1,12 @@
 <?php
 include "baseDatos.php";
-setcookie("user", "");
 
 session_start();
+
+
+if (!isset($_COOKIE["user"])) {
+    setcookie("user", "");
+}
 
 if (!isset($GLOBALS["pass"])) {
     $GLOBALS["pass"] = "Contraseña";
@@ -19,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $user = comprobarCadena($_POST["nombre"]);
         $_COOKIE["user"] = $user;
+        $_SESSION["user"] = $user;
         if (empty($_POST["password"])) {
             $GLOBALS["pass"] = "Por favor introduzca una contraseña";
         } else {

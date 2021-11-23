@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (!empty($_COOKIE["user"]) && !empty($_COOKIE["correo"]) && isSamePass($pass,$pass2)) {
         
-        if (crearUsuario($_COOKIE["user"],$_COOKIE["correo"], $pass)){
-            header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
-        }
+        crearUsuario($_COOKIE["user"],$_COOKIE["correo"], $pass);
+        header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
+        
 
     }
 }

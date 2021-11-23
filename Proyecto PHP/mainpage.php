@@ -1,3 +1,4 @@
+<?php include "funciones.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="h5">@LeeCross</div>
+                        <div class="h5">@<?php echo $_SESSION["user"];?></div>
                         <div class="h7 text-muted">Fullname : Miracles Lee Cross</div>
                         <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
                             etc.
@@ -122,7 +123,7 @@
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
+                                    <div class="h5 m-0">@<?php echo $_SESSION["user"];?></div>
                                     <div class="h7 text-muted">Miracles Lee Cross</div>
                                 </div>
                             </div>
@@ -171,7 +172,7 @@
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
+                                    <div class="h5 m-0">@<?php echo $_SESSION["user"];?></div>
                                     <div class="h7 text-muted">Miracles Lee Cross</div>
                                 </div>
                             </div>
@@ -232,7 +233,7 @@
                                     <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
                                 </div>
                                 <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
+                                    <div class="h5 m-0">@<?php echo $_SESSION["user"];?></div>
                                     <div class="h7 text-muted">Miracles Lee Cross</div>
                                 </div>
                             </div>
