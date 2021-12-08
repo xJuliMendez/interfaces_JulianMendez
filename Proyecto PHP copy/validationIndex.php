@@ -4,11 +4,10 @@ include "baseDatos.php";
 session_start();
 
 
-    $user = "";
-    $userErr = "";
-    $password = "";
-    $passErr = "";
-
+$user = "";
+$userErr = 0;
+$password = "";
+$passErr = 0;
 
 if (!isset($_COOKIE["user"])) {
     setcookie("user", "");
@@ -18,13 +17,12 @@ if (!isset($_COOKIE["user"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST["nombre"])) {
-        $userErr = "Introduzca nombre de usuario";
-        header("location: http://localhost:3000/Proyecto%20PHP%20copy/index.php?userErr=$userErr&passErr=$passErr");
+        $userErr = 1;
     } else {
         $user = comprobarCadena($_POST["nombre"]);
-        $_COOKIE["user"] = $user;
+        setcookie("user", $user);
         if (empty($_POST["password"])) {
-            $passErr = "Por favor introduzca una contraseña";
+            $passErr = 1;
         } else {
             $password = passEncrypt(comprobarCadena($_POST["password"]));
 
@@ -32,7 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
                 
             }else {
-                $userErr = "Nombre de usuario incorrecto";
+                $user = "";
+                $passErr = 1;
+                $userErr = 2;
             }
         }
     }
@@ -55,23 +55,26 @@ function passEncrypt($cad)
 function setUsuario()
 {
 
-    if (empty($userErr)) {
+    if (empty($GLOBALS["userErr"])) {
         return "Nombre de usuario";
-    }else {
-        return $userErr;
+    }elseif ($GLOBALS["userErr"] == 2) {
+        return "Nombre de usuario incorrecto";
+    }
+    else {
+        return "Introduzca nombre de usuario";
     }
 }
 function setValue()
 {
-    if (empty($user)) {
+    if (empty($GLOBALS["user"])) {
         return "";
     }else {
-        return $user;
+        return $GLOBALS["user"];
     }
 }
 function setPassword()
 {
-    if (empty($passErr)) {
+    if (empty($GLOBALS["passErr"])) {
         return "Contraseña";
     }else {
         return "Contraseña incorrecta";
