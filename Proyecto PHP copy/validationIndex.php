@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["nombre"])) {
         $userErr = 1;
     } else {
-        $user = comprobarCadena($_POST["nombre"]);
+        $_SESSION["user"] = $user = comprobarCadena($_POST["nombre"]);
         setcookie("user", $user);
         if (empty($_POST["password"])) {
             $passErr = 1;
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $password = passEncrypt(comprobarCadena($_POST["password"]));
 
             if (logInUsuario($user, $password)) {
-                header("location: http://localhost:3000/Proyecto%20PHP/mainpage.php");
+                header("location: http://localhost:3000/Proyecto%20PHP%20copy/main.php");
                 
             }else {
                 $user = "";
@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
-
 }
 
 function comprobarCadena($cad)
@@ -68,7 +67,10 @@ function setValue()
 {
     if (empty($GLOBALS["user"])) {
         return "";
-    }else {
+    }elseif (isset($_SESSION["user"])) {
+        return $_SESSION["user"];
+    }
+    else {
         return $GLOBALS["user"];
     }
 }

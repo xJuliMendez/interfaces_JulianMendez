@@ -1,4 +1,3 @@
-<?php include "funciones.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +41,6 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="h5">@<?php echo $_COOKIE["user"];?></div>
-                        <div class="h7 text-muted">Fullname : Miracles Lee Cross</div>
                         <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
                             etc.
                         </div>
@@ -124,7 +122,6 @@
                                 </div>
                                 <div class="ml-2">
                                     <div class="h5 m-0">@<?php echo $_COOKIE["user"];?></div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
                                 </div>
                             </div>
                             <div>
@@ -173,7 +170,6 @@
                                 </div>
                                 <div class="ml-2">
                                     <div class="h5 m-0">@<?php echo $_COOKIE["user"];?></div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
                                 </div>
                             </div>
                             <div>
@@ -234,7 +230,6 @@
                                 </div>
                                 <div class="ml-2">
                                     <div class="h5 m-0">@<?php echo $_COOKIE["user"];?></div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
                                 </div>
                             </div>
                             <div>
