@@ -89,12 +89,18 @@
                                         <label class="custom-file-label" for="customFile">Upload image</label>
                                     </div>
                                 </div>
-                                <div class="py-4"></div>
+                                <div class="py-4">
+
+
+                                    <!-- aqui irian las fotos -->
+
+
+                                </div>
                             </div>
                         </div>
                         <div class="btn-toolbar justify-content-between">
                             <div class="btn-group">
-                                <button type="submit" class="btn btn-primary">share</button>
+                                <button type="submit" class="btn btn-primary" value="send">share</button>
                             </div>
                             <div class="btn-group">
                                 <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
