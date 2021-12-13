@@ -17,13 +17,12 @@ include "validationIndex.php";
 </head>
 
 <body>
-
 	<div class="wrapper fadeInDown"> 
 		<div id="formContent">
 			<div class="fadeIn first">
 				<img id="icon" alt="User Icon" />
 			</div>
-
+			
 			<form method="post" action="index.php">
 				<input type="text" id="login" class="fadeIn second" name="nombre" placeholder="<?php echo setUsuario(); ?>" value ="<?php echo setValue();?>">
 				<input type="password" id="password" class="fadeIn third" name="password" placeholder="<?php echo setPassword() ?>">
@@ -36,7 +35,6 @@ include "validationIndex.php";
 
 		</div>
 	</div>
-
 </body>
 
 </html>
