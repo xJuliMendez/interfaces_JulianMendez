@@ -21,6 +21,9 @@ img {
 	justify-content: space-evenly;
 }
 
+.contenedor3{
+	height: 150px;
+}
 
 .botones {
 	padding-left: 1em;
@@ -53,7 +56,7 @@ img {
 	margin-bottom: 20px;
 	background: white;
 	position: relative;
-	animation: texto 3s 1;
+	animation: texto 4s infinite;
   }
   .texto2{
 	font-size: 28px;

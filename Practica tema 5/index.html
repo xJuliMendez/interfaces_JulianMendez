@@ -75,7 +75,7 @@
 		</header>
 
 		<div class="contenedor">
-			<audio controls="controls" loop="true" autoplay="true">
+			<audio controls preload="auto" loop="true" autoplay="true">
 				<source
 					src="audios/Sgt. Pepper's Lonely Hearts Club Band (Remastered 2009).ogg"
 					type="audio/ogg"
@@ -85,12 +85,14 @@
 					type="audio/mpeg"
 				/>
 			</audio>
-			<h1 class="texto1">Bienvenido al</h1>
-			<h1 class="texto2">Sgt. Pepper's Lonely Hearts Club Band</h1>
+			<div class="contenedor3">
+				<h1 class="texto1">Bienvenido al</h1>
+				<h1 class="texto2">Sgt. Pepper's Lonely Hearts Club Band</h1>
+			</div>
 		</div>
 
 		<div class="contenedor2">
-			<video autoplay muted loop controls width="480" height="360">
+			<video loop controls preload="none" width="480" height="360">
 				<source
 					src="videos/The Beatles – Sgt. Pepper’s Lonely Hearts Club Band – Anniversary Edition Trailer.ogv"
 					type="video/ogg"
