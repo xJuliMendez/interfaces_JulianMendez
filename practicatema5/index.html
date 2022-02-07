@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Practica 2</title>
+		<title>Practica 5</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -26,6 +26,9 @@
 					srcset="img/banner-md.jpg, img/banner-lg.jpg 1.5x"
 				/>
 				<img src="img/banner-sm.jpg" alt="Imagen con el logo de la pagina y el texto de ShareMe" />
+				<!-- 1.1.1 Non-text Content (Level A) 
+					Se asegura de que el texto alternativo transmita el contenido 
+					y la función de la imagen de forma precisa.-->
 			</picture>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid navegacion">
@@ -79,10 +82,22 @@
 
 		<div class="contenedor">
 			<figure>
+				<!-- 1.1.1 Non-text Content (Level A) 
+				Asegura que la figura presente un contenido accesible y, si corresponde, tenga un figcaption.
+				-->
 				<figcaption>
 					Musica de fondo
 				</figcaption>
 				<audio controls preload="auto" loop="true" autoplay="true">
+
+																<!-- 
+																	Dentro de la etiqueta audio agregamos los atributis:
+																	controls - para mostrar los controles del audio
+																	preload - para cargar informacion del audio
+																	loop - para que el audio se reiniciara una vez finalizado
+																	autoplay - para se reproduzca automaticamente nada mas entrar en la pagina
+																 -->
+
 					<source
 						src="audios/Sgt. Pepper's Lonely Hearts Club Band (Remastered 2009).ogg"
 						type="audio/ogg"
